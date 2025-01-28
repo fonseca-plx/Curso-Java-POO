@@ -1,8 +1,9 @@
 package entities;
 
 public class Account {
+
     private static final double RATE = 5.0;
-    private int accountNumber;
+    private final int accountNumber;
     private String accountHolder;
     private double balance;
 
@@ -11,10 +12,10 @@ public class Account {
         this.accountHolder = accountHolder;
     }
 
-    public Account(int accountNumber, String accountHolder, double balance) {
+    public Account(int accountNumber, String accountHolder, double initialDeposit) {
         this.accountNumber = accountNumber;
         this.accountHolder = accountHolder;
-        this.balance = balance;
+        deposit(initialDeposit);
     }
 
     public int getAccountNumber() {
