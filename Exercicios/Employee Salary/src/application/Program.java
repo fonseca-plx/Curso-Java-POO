@@ -22,6 +22,10 @@ public class Program {
             System.out.println("Employee #" + (i+1) + ":");
             System.out.print("Id: ");
             id = sc.nextInt();
+            while (hasId(employees, id)) {
+                System.out.print("Id already taken. Try again: ");
+                id = sc.nextInt();
+            }
             System.out.print("Name: ");
             sc.nextLine();
             name = sc.nextLine();
@@ -60,5 +64,11 @@ public class Program {
             }
         }
         return null;
+    }
+
+    // Função hasId verifica se o id informado pelo usuário já foi registrado no sistema; caso não haja registro 'emp' recebe 'null' e a função retorna false (emp != null = false); caso haja registro 'emp' recebe a posição da lista correspondente ao id digitado e a função retorna true (emp != null = True)
+    public static Boolean hasId(List<Employee> employees, int id) {
+        Employee emp = employees.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+        return emp != null;
     }
 }
