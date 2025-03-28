@@ -28,8 +28,8 @@ public class Program {
         System.out.print("Entre com o número de parcelas: ");
         int installmentsNumber = sc.nextInt();
 
-        ContractService contractService = new ContractService();
-        contractService.processContract(contract, installmentsNumber, new PaypalService());
+        ContractService contractService = new ContractService(new PaypalService());
+        contractService.processContract(contract, installmentsNumber);
 
         System.out.println("Parcelas:");
         for (Installment installment : contract.getInstallments()) {
