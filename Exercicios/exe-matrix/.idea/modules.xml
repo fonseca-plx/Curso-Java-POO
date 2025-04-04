@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Matriz.iml" filepath="$PROJECT_DIR$/Matriz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exe-matrix.iml" filepath="$PROJECT_DIR$/exe-matrix.iml" />
     </modules>
   </component>
 </project>
